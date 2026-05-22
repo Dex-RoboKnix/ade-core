@@ -1,0 +1,24 @@
+[package]
+name = "ade-shell"
+description = "ADE Shell Tauri backend"
+authors = ["DexRoboKnix"]
+edition.workspace = true
+license.workspace = true
+version.workspace = true
+
+[lints]
+workspace = true
+
+[lib]
+name = "ade_shell_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2", features = [] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "json"] }
